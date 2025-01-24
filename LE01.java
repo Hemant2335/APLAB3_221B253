@@ -28,7 +28,7 @@ class NishantClass {
 
 
 
-public class Main
+public class LE01
 {
 	public static void main(String[] args) {
 		NishantClass obj = new NishantClass();

@@ -1,0 +1,12 @@
+// Running Docker run for mongodb Image
+
+docker network create mongo-network
+docker run -d -p 27017:27017 --name mongo --network mongo-network -e MONGODBINIT_ADMINUSERNAME = root -e 
+MONGODBINIT_ADMINPASSWORD  = MONGO -e mongo
+
+docker network inspect mongo-network
+
+docker run -d -p 8081:8081 --name mongo-express --network mongo-network -e ME_CONFIG_MONGODB_ADMINUSERNAM = ADMINE -e 
+ME_CONFIG_MONGODB_ADMINPASSWORD  = TEST -e
+ME_CONFIG_MONGODB_URL = "mongodb://admin@mongo:27017" mongo-express
+
